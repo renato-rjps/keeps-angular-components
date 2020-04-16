@@ -17,7 +17,17 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "kp-components": [
+        "dist/kp-components/kp-components",
+        "dist/kp-components"
+      ],
+      "ng-keeps-ui": [
+        "dist/ng-keeps-ui/ng-keeps-ui",
+        "dist/ng-keeps-ui"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
