@@ -1,0 +1,233 @@
+// -----------------------------------------------------------------------------------------------------
+// @ Custom color maps for Fuse
+// -----------------------------------------------------------------------------------------------------
+$fuse-white: (
+  500: white,
+  contrast: (
+    500: $dark-primary-text,
+  ),
+);
+
+$fuse-black: (
+  500: black,
+  contrast: (
+    500: $light-primary-text,
+  ),
+);
+
+$fuse-navy: (
+  50: #e3f2fd,
+  100: #c5c6cb,
+  200: #9ea1a9,
+  300: #7d818c,
+  400: #5c616f,
+  500: #3c4252,
+  600: #353a48,
+  700: #2d323e,
+  800: #262933,
+  900: #1e2129,
+  A100: #c5c6cb,
+  A200: #9ea1a9,
+  A400: #5c616f,
+  A700: #2d323e,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  ),
+);
+
+$keeps: (
+  50: #e8ebfd,
+  100: #c6ccfa,
+  200: #a0abf7,
+  300: #7a89f3,
+  400: #5e6ff1,
+  500: #4156ee,
+  600: #3b4fec,
+  700: #3245e9,
+  800: #2a3ce7,
+  900: #1c2be2,
+  A100: #ffffff,
+  A200: #e4e5ff,
+  A400: #b1b6ff,
+  A700: #979eff,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  ),
+);
+
+// Generate Fuse color classes for custom palettes
+$custom_palettes: (
+  fuse-white: $fuse-white,
+  fuse-black: $fuse-black,
+  fuse-navy: $fuse-navy,
+  keeps: $keeps,
+);
+
+@include fuse-color-classes($custom_palettes);
+
+// -----------------------------------------------------------------------------------------------------
+// @ Typography
+// -----------------------------------------------------------------------------------------------------
+
+// Angular Material typography
+$typography: mat-typography-config(
+  $font-family: 'Muli, Helvetica Neue, Arial, sans-serif',
+  $title: mat-typography-level(20px, 32px, 600),
+  $body-2: mat-typography-level(14px, 24px, 600),
+  $button: mat-typography-level(14px, 14px, 600),
+  $input: mat-typography-level(16px, 1.125, 400) /// line-height must be unitless !!!,
+);
+
+// Setup the typography
+@include angular-material-typography($typography);
+
+// -----------------------------------------------------------------------------------------------------
+// @ Component theming
+// -----------------------------------------------------------------------------------------------------
+
+// Import app and page component themes here to enable theming for them
+//@import 'src/app/layout/layout.theme';
+//@import 'src/app/layout/components/toolbar-2/toolbar-2.theme';
+
+// Define a mixin for easier access
+@mixin components-theme($theme) {
+  // Layout components
+  //@include layout-theme($theme);
+  // Toolbar
+  //@include toolbar-theme($theme);
+}
+
+@mixin add-light-theme($primary, $accent, $warn) {
+  $theme-primary-palette: mat-palette($primary, 900);
+  $theme-accent-palette: mat-palette($accent, A700);
+  $theme-warn-palette: mat-palette($warn);
+
+  $theme: mat-light-theme($theme-primary-palette, $theme-accent-palette, $theme-warn-palette);
+
+  // Generate the Angular Material theme
+  @include angular-material-theme($theme);
+  // Apply the theme to the Fuse Core
+  @include fuse-core-theme($theme);
+  // Apply the theme to the user components
+  @include components-theme($theme);
+  // Apply the theme to the Keeps
+  // @include keeps-core-theme($theme);
+
+  $palettes: (
+    primary: $theme-primary-palette,
+    accent: $theme-accent-palette,
+    warn: $theme-warn-palette,
+  );
+
+  @include fuse-color-classes($palettes);
+}
+
+body.theme-red {
+  @include add-light-theme($mat-red, $mat-red, $mat-red);
+}
+
+body.theme-pink {
+  @include add-light-theme($mat-pink, $mat-pink, $mat-red);
+}
+
+body.theme-purple {
+  @include add-light-theme($mat-purple, $mat-purple, $mat-red);
+}
+
+body.theme-deep-purple {
+  @include add-light-theme($mat-deep-purple, $mat-deep-purple, $mat-red);
+}
+
+body.theme-indigo {
+  @include add-light-theme($mat-indigo, $mat-indigo, $mat-red);
+}
+
+body.theme-blue {
+  @include add-light-theme($mat-blue, $mat-blue, $mat-red);
+}
+
+body.theme-light-blue {
+  @include add-light-theme($mat-light-blue, $mat-light-blue, $mat-red);
+}
+
+body.theme-cyan {
+  @include add-light-theme($mat-cyan, $mat-cyan, $mat-red);
+}
+
+body.theme-teal {
+  @include add-light-theme($mat-teal, $mat-teal, $mat-red);
+}
+
+body.theme-green {
+  @include add-light-theme($mat-green, $mat-green, $mat-red);
+}
+
+body.theme-light-green {
+  @include add-light-theme($mat-light-green, $mat-light-green, $mat-red);
+}
+
+body.theme-lime {
+  @include add-light-theme($mat-lime, $mat-lime, $mat-red);
+}
+
+body.theme-yellow {
+  @include add-light-theme($mat-yellow, $mat-yellow, $mat-red);
+}
+
+body.theme-amber {
+  @include add-light-theme($mat-amber, $mat-amber, $mat-red);
+}
+
+body.theme-orange {
+  @include add-light-theme($mat-orange, $mat-orange, $mat-red);
+}
+
+body.theme-deep-orange {
+  @include add-light-theme($mat-deep-orange, $mat-deep-orange, $mat-red);
+}
+
+body.theme-brown {
+  @include add-light-theme($mat-brown, $mat-deep-orange, $mat-red);
+}
+
+body.theme-grey {
+  @include add-light-theme($mat-grey, $mat-grey, $mat-red);
+}
+
+body.theme-blue-grey {
+  @include add-light-theme($mat-blue-grey, $mat-blue-grey, $mat-red);
+}
+
+body.theme-fuse-navy {
+  @include add-light-theme($fuse-navy, $fuse-navy, $mat-red);
+}
+
+body.theme-keeps {
+  @include add-light-theme($keeps, $keeps, $mat-red);
+}

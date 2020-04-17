@@ -1,6 +1,6 @@
 {
   "name": "keeps-angular-components",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,20 +8,22 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "release": "standard-version",
-    "publish": "ng build kp-components --prod && cd dist/kp-components && npm publish --access public",
-    "publish-ui": "ng build ng-keeps-ui --prod && cd dist/ng-keeps-ui && npm publish --access public"
+    "release": "standard-version -a",
+    "publish": "ng build ng-keeps-ui --prod && cd dist/ng-keeps-ui && npm publish --access public"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "~9.0.0",
+    "@angular/cdk": "^9.2.1",
     "@angular/common": "~9.0.0",
     "@angular/compiler": "~9.0.0",
     "@angular/core": "~9.0.0",
     "@angular/forms": "~9.0.0",
+    "@angular/material": "^9.2.1",
     "@angular/platform-browser": "~9.0.0",
     "@angular/platform-browser-dynamic": "~9.0.0",
     "@angular/router": "~9.0.0",
+    "npm": "^6.14.4",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
