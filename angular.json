@@ -27,7 +27,10 @@
               "projects/sample/src/favicon.ico",
               "projects/sample/src/assets"
             ],
-            "styles": ["projects/sample/src/styles.scss"],
+            "styles": [
+              "projects/ng-keeps-ui/src/lib/styles.scss",
+              "projects/sample/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -89,7 +92,10 @@
               "projects/sample/src/favicon.ico",
               "projects/sample/src/assets"
             ],
-            "styles": ["projects/sample/src/styles.scss"],
+            "styles": [
+              "projects/ng-keeps-ui/src/lib/styles.scss",
+              "projects/sample/src/styles.scss"
+            ],
             "scripts": []
           }
         },
@@ -114,44 +120,6 @@
             "production": {
               "devServerTarget": "sample:serve:production"
             }
-          }
-        }
-      }
-    },
-    "kp-components": {
-      "projectType": "library",
-      "root": "projects/kp-components",
-      "sourceRoot": "projects/kp-components/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "projects/kp-components/tsconfig.lib.json",
-            "project": "projects/kp-components/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/kp-components/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/kp-components/src/test.ts",
-            "tsConfig": "projects/kp-components/tsconfig.spec.json",
-            "karmaConfig": "projects/kp-components/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/kp-components/tsconfig.lib.json",
-              "projects/kp-components/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
           }
         }
       }

@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { KpComponentsModule } from 'kp-components';
+import { NgKeepsUIModule } from 'ng-keeps-ui';
 
 @NgModule({
   declarations: [
@@ -12,7 +12,7 @@ import { KpComponentsModule } from 'kp-components';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    KpComponentsModule
+    NgKeepsUIModule
   ],
   providers: [],
   bootstrap: [AppComponent]

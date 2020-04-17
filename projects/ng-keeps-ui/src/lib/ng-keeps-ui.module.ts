@@ -1,12 +1,6 @@
 import { NgModule } from '@angular/core';
-import { NgKeepsUiComponent } from './ng-keeps-ui.component';
-
-
-
+import { KpFilterModule } from './components/kp-filter';
 @NgModule({
-  declarations: [NgKeepsUiComponent],
-  imports: [
-  ],
-  exports: [NgKeepsUiComponent]
+  exports: [KpFilterModule]
 })
-export class NgKeepsUiModule { }
+export class NgKeepsUIModule { }
