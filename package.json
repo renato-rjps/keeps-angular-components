@@ -1,6 +1,6 @@
 {
   "name": "keeps-angular-components",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "release": "standard-version -a",
+    "release": "standard-version",
     "publish": "ng build ng-keeps-ui --prod && cd dist/ng-keeps-ui && npm publish --access public"
   },
   "private": true,
