@@ -1,9 +1,13 @@
 {
   "name": "@keepsdev/ng-keeps-ui",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "peerDependencies": {
     "@angular/common": "^9.0.7",
     "@angular/core": "^9.0.7",
+    "@angular/cdk": "^9.2.1",
+    "@angular/animations": "~9.0.0",
+    "@angular/platform-browser": "~9.0.0",
+    "@angular/material": "^9.2.1",
     "tslib": "^1.10.0"
   }
 }
